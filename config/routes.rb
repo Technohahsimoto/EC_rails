@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tags, except: :show
   resources :books do
-    resources :taggings, only: [:new, :edit, :create, :update, :destroy]
+  resources :taggings, only: [:new, :edit, :create, :update, :destroy]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
