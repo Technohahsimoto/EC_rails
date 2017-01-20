@@ -5,7 +5,7 @@
     <p	id="notice"><%=	notice	%></p>
   </div> 
 <%	end	%>
-<h1 class="sub-header">Books</h1>
+<h1 class="sub-header">Books　一覧</h1>
 
 <div class="table-responsive">
   <table class="table table-striped">
@@ -28,9 +28,9 @@
           <td><%= book.published_on %></td>
           <td><%= book.showing %></td>
           <td><%= book.price %></td>
-          <td><%= link_to '詳細', book %></td>
-          <td><%= link_to '編集', edit_book_path(book) %></td>
-          <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+          <td><%= link_to '詳細', book , class: 'btn btn-default'%></td>
+          <td><%= link_to '編集', edit_book_path(book) , class: 'btn btn-default'%></td>
+          <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除していいですか？' } , class: 'btn btn-default'%></td>
         </tr>
       <% end %>
     </tbody>
