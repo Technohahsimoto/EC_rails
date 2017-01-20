@@ -10,6 +10,10 @@
   CSV.foreach('db/tags.csv', headers: :first_row)	do |row|
     tag = Tag.find_or_create_by(name: row['name']) 
   end
+  admins =User.where(email: 'test@example.com')
+	unless admins.present?
+	  User.create(name: 'Admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project')
+	end
   	
   CSV.foreach('db/books.csv',	headers: :first_row) do	|row| 
     book = Book.find_or_create_by(title: row['title'], author: row['author'], price:row['price'])
