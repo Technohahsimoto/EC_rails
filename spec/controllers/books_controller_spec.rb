@@ -111,14 +111,14 @@ RSpec.describe BooksController, type: :controller do
       it "assigns the requested book as @book" do
         book = Book.create! valid_attributes
         put :update, params: {id: book.to_param, book: valid_attributes}, session: valid_session
-        skip
+
         expect(assigns(:book)).to eq(book)
       end
 
       it "redirects to the book" do
         book = Book.create! valid_attributes
         put :update, params: {id: book.to_param, book: valid_attributes}, session: valid_session
-        skip.expect(response).to redirect_to(book)
+        expect(response).to redirect_to(book)
       end
     end
   end
