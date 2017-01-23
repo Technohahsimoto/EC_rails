@@ -1,16 +1,16 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe "taggings/show", type: :view do
-  before(:each) do
-    @tagging = assign(:tagging, Tagging.create!(
-      :tag_id => nil,
-      :book_id => nil
-    ))
-  end
+# RSpec.describe "taggings/show", type: :view do
+#   before(:each) do
+#     @tagging = assign(:tagging, Tagging.create!(
+#       :tag_id => nil,
+#       :book_id => nil
+#     ))
+#   end
 
-  it "renders attributes in <p>" do
-    render
-    expect(rendered).to match(//)
-    expect(rendered).to match(//)
-  end
-end
+#   it "renders attributes in <p>" do
+#     render
+#     expect(rendered).to match(//)
+#     expect(rendered).to match(//)
+#   end
+# end
