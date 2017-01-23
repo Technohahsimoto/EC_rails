@@ -12,7 +12,7 @@
   end
   admins =User.where(email: 'test@example.com')
 	unless admins.present?
-	  User.create(name: 'Admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project')
+	  User.create(name: 'Admin', email: 'test@example.com', password: 'monka_project', password_confirmation: 'monka_project', role: 'admin')
 	end
   	
   CSV.foreach('db/books.csv',	headers: :first_row) do	|row| 
