@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Auther:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Published on:</strong>
-  <%= @book.published_on %>
-</p>
-
-<p>
-  <strong>Showing:</strong>
-  <%= @book.showing %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @book.price %>
-</p>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <div class="form-group">
+      <strong>商品名: </strong>
+      <%= @book.title %>
+    </div>
+     <div class="form-group">
+      <strong>著者: </strong>
+      <%= @book.author %>
+    </div>
+    
+    <div class="form-group">
+      <strong>出版日: </strong>
+      <%= @book.published_on %>
+    </div>
+    
+    <div class="form-group">
+      <strong>商品表示: </strong>
+      <%= @book.showing %>
+    </div>
+    
+     <div class="form-group">
+      <strong>値段: </strong>
+      <%= @book.price %>
+    </div>   
+  </table>
+</div>
 
 <%= link_to '編集', edit_book_path(@book), class: 'btn btn-default'%> |
 <%= link_to '戻る', books_path, class: 'btn btn-default' %>
