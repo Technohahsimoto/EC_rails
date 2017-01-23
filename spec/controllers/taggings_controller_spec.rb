@@ -36,6 +36,8 @@ RSpec.describe TaggingsController, type: :controller do
   # TaggingsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  let(:admin_user) {User.all.first}
+  before(:each) { sign_in admin_user }
   describe "GET #index" do
     it "assigns all taggings as @taggings" do
       tagging = Tagging.create! valid_attributes

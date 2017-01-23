@@ -24,9 +24,8 @@ RSpec.describe UsersController, type: :controller do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { email: 'general@example.com', password: 'password', password_confirmation: 'password' }
   }
-
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
@@ -35,7 +34,10 @@ RSpec.describe UsersController, type: :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-
+  
+  let(:admin_user) {User.all.first}
+  before(:each) { sign_in admin_user }
+  
   describe "GET #index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
@@ -70,6 +72,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new User" do
+        
         expect {
           post :create, params: {user: valid_attributes}, session: valid_session
         }.to change(User, :count).by(1)
