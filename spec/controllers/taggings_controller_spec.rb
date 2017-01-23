@@ -54,12 +54,13 @@ RSpec.describe TaggingsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new tagging as @tagging" do
-      get :new, params: {}, session: valid_session
-      expect(assigns(:tagging)).to be_a_new(Tagging)
-    end
-  end
+  #describe "GET #new" do
+    #it "assigns a new tagging as @tagging" do
+      #get :new, params: {}, session: valid_session
+      #skip.expect(response).to redirect_to(book)
+      #expect(assigns(:tagging)).to be_a_new(Tagging)
+    #end
+  #end
 
   describe "GET #edit" do
     it "assigns the requested tagging as @tagging" do
